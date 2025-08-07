@@ -53,11 +53,11 @@
       padding: 20px; border-radius: 0;
       font-style: italic; font-size: 18px;
       max-width: 90%;
-       scroll-snap-type: y mandatory;    }
+       scroll-snap-type: y mandatory;   
+    }
     .multi-photo {
       display: flex; overflow-x: auto;
       gap: 10px; margin-top: 10px;
-      scroll-snap-type: x mandatory;
     }
     .multi-photo img {
       width: 250px; height: 250px;
@@ -96,7 +96,7 @@
 </div>
 <div class="page" id="page3" style="background: linear-gradient(to right, #8e9eab, #eef2f3);">
 <h1 style="color: white; font-weight: bold;">Thank you for these beautiful memories</h1>
-<div class="multi-photo" id="photoContainer" style="display: none;"><div class="swiper-container" id="photoSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="1000068123.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000066244.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000066236.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000081102.png" style="width: 100%; border-radius: 10px;"/></div></div></div></div>
+<div class="multi-photo" id="photoContainer" style="display: none;"><div class="swiper-container" id="photoSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="1000068123.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000066244.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000066236.jpg" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000081102.jpg" style="width: 100%; border-radius: 10px;"/></div></div></div></div>
 <button class="button" onclick="nextPage()">One More Thing</button>
 </div>
 <div class="page" id="page4" style="background: pink;">
@@ -137,8 +137,8 @@ if (current === 2) {
   container.innerHTML = `
     <img src="photo1.png" alt="photo1" />
     <img src="photo2.png" alt="photo2" />
-    <img src="photo3.png" alt="photo3" />
-    <img src="photo4.png" alt="photo4" />
+    <img src="photo3.jpg" alt="photo3" />
+    <img src="photo4.jpg" alt="photo4" />
   `;
 }
 
@@ -173,6 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (pages[2].classList.contains("active")) {
       initSwiper();
     }
+     if (page[3].classList.contains("active")) {
+      initSwiper();
+     }
   });
 
   observer.observe(document.querySelector("#pages"), { attributes: true, childList: true, subtree: true });

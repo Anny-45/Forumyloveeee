@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thank You</title>
-<style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
     body, html { width: 100%; height: 100%; overflow: hidden; }
     .page {
@@ -39,9 +37,9 @@
       scroll-snap-align: start;
       color: white;
       padding: 20px;
-      border-radius: 15px;
       font-size: 18px;
       min-width: 280px;
+      border-radius: 0;
     }
     .green { background: green; }
     .orange { background: orange; }
@@ -49,15 +47,22 @@
     .purple { background: purple; }
     .brown { background: saddlebrown; }
     .thankyou-box {
-      background: lightpink; color: white;
-      padding: 20px; border-radius: 0;
-      font-style: italic; font-size: 18px;
+      background: lightpink;
+      color: white;
+      padding: 20px;
+      font-style: italic;
+      font-size: 18px;
       max-width: 90%;
-       scroll-snap-type: y mandatory;   
+      max-height: 70vh;
+      overflow-y: auto;
     }
     .multi-photo {
-      display: flex; overflow-x: auto;
-      gap: 10px; margin-top: 10px;
+      display: none;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 10px;
+      margin-top: 10px;
+      padding-bottom: 10px;
     }
     .multi-photo img {
       width: 250px; height: 250px;
@@ -72,113 +77,96 @@
     }
     audio { display: none; }
   </style>
-<link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet"/></head>
+</head>
 <body>
-<audio autoplay="" loop="">
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_1b1c8df7c3.mp3" type="audio/mpeg"/>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_1b1c8df7c3.mp3" type="audio/mpeg"/>
 </audio>
+
+<!-- PAGE 1 -->
 <div class="page active" id="page1" style="background: pink;">
-<img src="hug1.gif" width="150"/>
-<h1><b style="color: white;">I want to say something ❤️</b></h1>
-<h2 style="color: black; font-style: italic;">straight from my heart</h2>
-<button class="button" onclick="nextPage()">Let me tell you</button>
+  <img src="hug1.gif" width="150"/>
+  <h1><b style="color: white;">I want to say something ❤️</b></h1>
+  <h2 style="color: black; font-style: italic;">straight from my heart</h2>
+  <button class="button" onclick="nextPage()">Let me tell you</button>
 </div>
+
+<!-- PAGE 2 -->
 <div class="page" id="page2" style="background: pink;">
-<h1 style="color: white; font-weight: bold;">Some words from my heart</h1>
-<div class="note-slider">
-<div class="note green" style="background-color: green; color: white; border-radius: 0;">Thank you for always being there when I needed you the most 😊</div>
-<div class="note orange" style="background-color: orange; color: white; border-radius: 0;">Thank you for making my lyf brighter ☀️</div>
-<div class="note blue" style="background-color: blue; color: white; border-radius: 0;">Thank you for making me smile every day 😄</div>
-<div class="note purple" style="background-color: purple; color: white; border-radius: 0;">Thank you for bringing the sunshine into my world 🌻</div>
-<div class="note brown" style="background-color: brown; color: white; border-radius: 0;">Thank you for being the most precious gift of my lyf 🎁</div>
+  <h1 style="color: white; font-weight: bold;">Some words from my heart</h1>
+  <div class="note-slider">
+    <div class="note green">Thank you for always being there when I needed you the most 😊</div>
+    <div class="note orange">Thank you for making my lyf brighter ☀️</div>
+    <div class="note blue">Thank you for making me smile every day 😄</div>
+    <div class="note purple">Thank you for bringing the sunshine into my world 🌻</div>
+    <div class="note brown">Thank you for being the most precious gift of my lyf 🎁</div>
+  </div>
+  <button class="button" onclick="nextPage()">Keep Going</button>
 </div>
-<button class="button" onclick="nextPage()">Keep Going</button>
-</div>
+
+<!-- PAGE 3 -->
 <div class="page" id="page3" style="background: linear-gradient(to right, #8e9eab, #eef2f3);">
-<h1 style="color: white; font-weight: bold;">Thank you for these beautiful memories</h1>
-<div class="multi-photo" id="photoContainer" style="display: none;"><div class="swiper-container" id="photoSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><img src="1000068123.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000066244.png" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000066236.jpg" style="width: 100%; border-radius: 10px;"/></div><div class="swiper-slide"><img src="1000081102.jpg" style="width: 100%; border-radius: 10px;"/></div></div></div></div>
-<button class="button" onclick="nextPage()">One More Thing</button>
+  <h1 style="color: white; font-weight: bold;">Thank you for these beautiful memories</h1>
+  <div class="multi-photo" id="photoContainer">
+    <img src="photo1.jpg" alt="photo1"/>
+    <img src="photo2.jpg" alt="photo2"/>
+    <img src="photo3.jpg" alt="photo3"/>
+    <img src="photo4.jpg" alt="photo4"/>
+  </div>
+  <button class="button" onclick="nextPage()">One More Thing</button>
 </div>
+
+<!-- PAGE 4 -->
 <div class="page" id="page4" style="background: pink;">
-<div class="thankyou-box">
-      My Dearest Love,<br/><br/>
-      I just wanted to take a moment to say thank you—from the bottom of my heart—for everything you do and everything you are.<br/><br/>
-      Thank you for being my safe space, my biggest cheerleader, and my favorite person. Life feels lighter and brighter with you in it. Whether we’re doing something exciting or simply sitting in silence, your presence makes everything better. You have this magical way of turning ordinary moments into memories I want to hold onto forever.<br/><br/>
-      You make me feel so loved, seen, and understood, even on the days when I don’t feel like myself. You’ve stood by me with patience, made me laugh when I wanted to cry, and reminded me every day that love is supposed to feel this comforting and kind.<br/><br/>
-      I’m so grateful for your little gestures, your silly jokes, your warm hugs, and that beautiful heart of yours. Thank you for loving me the way you do—unconditionally and wholeheartedly.<br/><br/>
-      You mean more to me than words could ever say. I love you endlessly, and I can’t wait to keep making memories together.<br/><br/>
-      Forever yours ❤️
-    </div>
-<button class="button" onclick="nextPage()">Show me what it is</button>
+  <div class="thankyou-box">
+    My Dearest Love,<br/><br/>
+    I just wanted to take a moment to say thank you—from the bottom of my heart—for everything you do and everything you are.<br/><br/>
+    Thank you for being my safe space, my biggest cheerleader, and my favorite person. Life feels lighter and brighter with you in it. Whether we’re doing something exciting or simply sitting in silence, your presence makes everything better. You have this magical way of turning ordinary moments into memories I want to hold onto forever.<br/><br/>
+    You make me feel so loved, seen, and understood, even on the days when I don’t feel like myself. You’ve stood by me with patience, made me laugh when I wanted to cry, and reminded me every day that love is supposed to feel this comforting and kind.<br/><br/>
+    I’m so grateful for your little gestures, your silly jokes, your warm hugs, and that beautiful heart of yours. Thank you for loving me the way you do—unconditionally and wholeheartedly.<br/><br/>
+    You mean more to me than words could ever say. I love you endlessly, and I can’t wait to keep making memories together.<br/><br/>
+    Forever yours ❤️
+  </div>
+  <button class="button" onclick="nextPage()">Show me what it is</button>
 </div>
+
+<!-- PAGE 5 -->
 <div class="page" id="page5" style="background: pink;">
-<img src="hug2.gif" width="200"/>
-<h2 class="hug-title" style="font-weight: bold; background: linear-gradient(to right, purple, pink); -webkit-background-clip: text; color: transparent;">Hugs forever</h2>
-<p style="color: white;">I wish I could hug you forever....because I love you endlessly</p>
-<button class="button" onclick="nextPage()">I feel it</button>
+  <img src="hug2.gif" width="200"/>
+  <h2 class="hug-title">Hugs forever</h2>
+  <p style="color: white;">I wish I could hug you forever....because I love you endlessly</p>
+  <button class="button" onclick="nextPage()">I feel it</button>
 </div>
+
+<!-- PAGE 6 -->
 <div class="page" id="page6" style="background: navy; background-image: linear-gradient(to bottom right, navy, white);">
-<h1 style="color: white;">Thank you for being</h1>
-<h1 style="background: linear-gradient(to right, pink, purple); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>my favorite person!</b></h1>
-<p style="color: white;">want to feel the the magic once more?</p>
-<button class="button" onclick="location.reload()">Start Again</button>
+  <h1 style="color: white;">Thank you for being</h1>
+  <h1 style="background: linear-gradient(to right, pink, purple); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"><b>my favorite person!</b></h1>
+  <p style="color: white;">want to feel the magic once more?</p>
+  <button class="button" onclick="location.reload()">Start Again</button>
 </div>
+
+<!-- SCRIPT -->
 <script>
-    let current = 1;
-    function nextPage() {
-      const pages = document.querySelectorAll(".page");
-      if (current < pages.length) {
-        pages[current - 1].classList.remove("active");
-        pages[current].classList.add("active");
+  let current = 1;
+  function nextPage() {
+    const pages = document.querySelectorAll(".page");
+    if (current < pages.length) {
+      pages[current - 1].classList.remove("active");
+      pages[current].classList.add("active");
 
-if (current === 2) {
-  const container = document.getElementById("photoContainer");
-  container.style.display = "flex";
-  container.innerHTML = `
-    <img src="photo1.png" alt="photo1" />
-    <img src="photo2.png" alt="photo2" />
-    <img src="photo3.jpg" alt="photo3" />
-    <img src="photo4.jpg" alt="photo4" />
-  `;
-}
-
-      if (current === 3) {
+      // Show photo gallery on page 3
+      if (current === 2) {
         const container = document.getElementById("photoContainer");
         container.style.display = "flex";
       }
-        current++;
-      }
-    }
-  </script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><script>
-document.addEventListener("DOMContentLoaded", function () {
-  let swiper;
-  function initSwiper() {
-    if (!swiper && document.getElementById("photoSwiper")) {
-      swiper = new Swiper(".swiper-container", {
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+
+      current++;
     }
   }
+</script>
 
-  let pages = document.querySelectorAll(".page");
-  let observer = new MutationObserver(() => {
-    if (pages[2].classList.contains("active")) {
-      initSwiper();
-    }
-     if (page[3].classList.contains("active")) {
-      initSwiper();
-     }
-  });
-
-  observer.observe(document.querySelector("#pages"), { attributes: true, childList: true, subtree: true });
-});
-</script></body>
+</body>
 </html>
+
